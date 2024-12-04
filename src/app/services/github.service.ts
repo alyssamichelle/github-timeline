@@ -1,5 +1,5 @@
 import {inject, Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import {map, Observable, startWith} from 'rxjs';
 import {TimelineEvent} from "@progress/kendo-angular-layout";
 
