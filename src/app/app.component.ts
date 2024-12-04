@@ -7,10 +7,9 @@ import {toSignal} from "@angular/core/rxjs-interop";
 
 @Component({
     selector: 'app-root',
-    standalone: true,
     imports: [RouterOutlet, KENDO_TIMELINE, DatePipe],
     templateUrl: './app.component.html',
-    styleUrl: './app.component.scss',
+    styleUrl: './app.component.scss'
 })
 export class AppComponent {
     githubService = inject(GithubService);
