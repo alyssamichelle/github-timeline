@@ -1,14 +1,15 @@
 <h1>Commits</h1>
-<kendo-timeline [events]="commits$()" [orientation]="'horizontal'"></kendo-timeline>
+<kendo-timeline [events]="commits$()" [orientation]="'horizontal'">
+  <ng-template kendoTimelineCardHeaderTemplate let-event>
+    <h3>{{ event.title }} - {{ event.subtitle }}</h3>
+  </ng-template>
 
-<!-- <p>commits: {{commits$()| json}}</p> -->
-<main>
-@for (commit of commits$(); track commit) {
-  <div>
-      <h2>{{ commit.title }}</h2>
-      <p>{{ commit.subtitle }}</p>
-      <a [href]="commit.actions.url" target="_blank">{{ commit.actions.text }}</a>
-  </div>
-}
-</main>
+  <ng-template kendoTimelineCardBodyTemplate let-event>
+    <p><strong>Author:</strong> {{ event.description }}</p>
+    <p><strong>Date:</strong> {{ event.subtitle | date :'mediumDate' }}</p>
+  </ng-template>
 
+  <ng-template kendoTimelineCardActionsTemplate let-event>
+    <a [href]="event.actions.url" target="_blank">{{ event.actions.text }}</a>
+  </ng-template>
+</kendo-timeline>
