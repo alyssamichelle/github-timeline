@@ -1,14 +1,13 @@
 <h1>Commits</h1>
-<kendo-timeline [events]="commits$()" [orientation]="'horizontal'"></kendo-timeline>
+<kendo-timeline [events]="commits$()" orientation='horizontal'></kendo-timeline>
 
-<!-- <p>commits: {{commits$()| json}}</p> -->
-<main>
+<!-- {{commits$()| json}} -->
+<!-- <main>
 @for (commit of commits$(); track commit) {
   <div>
       <h2>{{ commit.title }}</h2>
       <p>{{ commit.subtitle }}</p>
-      <a [href]="commit.actions.url" target="_blank">{{ commit.actions.text }}</a>
   </div>
 }
-</main>
+</main> -->
 
